@@ -1,0 +1,288 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* ===== Header Styling ===== */
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.logo span {
+    color: #ffd700;
+    font-size: 42px;
+    font-weight: bolder;
+}
+header .logo {
+    text-decoration: none;
+    color: white;
+}
+
+header .logo span {
+    color: #ffd700;
+}
+header {
+    background-color: #003580;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+header nav {
+    display: flex;
+    align-items: center;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-btn {
+    background-color: #555;
+    color: white;
+}
+
+.signup-btn {
+    background-color: #0071c2;
+    color: white;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    background-color: #005fa3;
+}
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  text-align: center;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.price-tag {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.promo-box button {
+  background-color: #0071c2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.promo-box button:hover {
+  background-color: #005fa3;
+}
+
+/* Destinations */
+.destinations {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.destination-card {
+  text-align: center;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  width: 220px;
+  transition: transform 0.3s;
+}
+
+.destination-card:hover {
+  transform: scale(1.05);
+}
+
+.destination-card img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.country {
+  background-color: #0071c2;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.footer {
+  background-color: #f8f8f8;
+  padding-top: 40px;
+  color: #555;
+  font-size: 14px;
+  text-align: left;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h4,
+.footer-section h2 {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #007bff;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.currency img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-bottom {
+    background-color: #003580;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;}
+
+.footer-bottom p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-section a {
+    font-size: 16px;
+  }
+
+  header nav {
+    gap: 10px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px;
+  }
+
+  .footer-top {
+    padding-bottom: 15px;
+  }
+
+  .footer-section h4 {
+    font-size: 18px;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+  }
+
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .auth-buttons {
+        margin-top: 10px;
+    }
+}

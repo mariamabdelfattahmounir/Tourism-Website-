@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>City Explorer</h1>
+    </header>
+
+    <select id="citySelector">
+        <option value="">Select a City</option>
+        <optgroup label="Egypt">
+            <option value="cairo">Cairo</option>
+            <option value="luxor">Luxor</option>
+        </optgroup>
+        <optgroup label="France">
+            <option value="paris">Paris</option>
+            <option value="marseille">Marseille</option>
+        </optgroup>
+        <optgroup label="Turkey">
+            <option value="istanbul">Istanbul</option>
+            <option value="izmir">Izmir</option>
+        </optgroup>
+
+        <optgroup label="Russia">
+            <option value="moscow">Moscow</option>
+            <option value="kazan">Kazan</option>
+        </optgroup>
+
+        <optgroup label="Italy">
+            <option value="rome">Rome</option>
+            <option value="pisa">Pisa</option>
+        </optgroup>
+        <optgroup label="England">
+            <option value="london">London</option>
+            <option value="liverpool">Liverpool</option>
+        </optgroup>
+    </select>
+
+    <div id="controls" class="hidden">
+        <button id="showVideoBtn">Show Video Only</button>
+        <button id="showImagesBtn">Show Images Only</button>
+    </div>
+
+    <div class="content hidden" id="content">
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 City Explorer. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

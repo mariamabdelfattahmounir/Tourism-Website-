@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <a href="../../your guide/Salma - HomePage/index.html" class="logo">Voya<span>GO</span></a>
+    <nav>
+      <a href="../../your guide/Nada - Flights, Cars Rentals/flights.html">Flights</a>
+      <a href="../../your guide/Maria - Stays/stays.html">Stays</a>
+      <a href="../../your guide/Nada - Flights, Cars Rentals/CarRentals.html">Car Rentals</a>
+      <a href="../../your guide/Mariem -Destinations/destinations.html">Destinations</a>
+      <a href="../../your guide/Ahmed - Attractions , Tours/attractions.html">Attractions</a>
+      <a href="../../your guide/Ahmed - Attractions , Tours/tours.html">Tours</a>
+      <a href="../../your guide/Jana - currency converter ,destenation vidos&images/weather/index.html">Weather</a>
+    </nav>
+        <div class="mobile-menu-btn"></div>
+    </header>
+
+    <div class="main-content">
+        <main>
+            <section class="hero">
+                <h1>Find your perfect destination</h1>
+            </section>
+        </main>
+
+        <div class="container" id="mainContent">
+            <div class="search-card">
+                <form id="searchForm">
+                    <div class="search-bar">
+                        <input type="text" id="destinationInput" placeholder="Find destination" list="destinations" required>
+                        <datalist id="destinations">
+                            <option value="Egypt">
+                            <option value="France">
+                            <option value="Turkey">
+                            <option value="Russia">
+                            <option value="Italy">
+                            <option value="England">
+                        </datalist>
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="popular-destinations">
+                <h3>Popular Countries to Visit</h3>
+                <div class="countries-grid">
+                    <div class="country-card" data-country="Egypt">
+                        <img src="egypt .jpeg" alt="Egypt" loading="lazy">
+                        <div class="country-info">
+                            <h4>Egypt</h4>
+                            <p>Ancient pyramids and Red Sea resorts</p>
+                        </div>
+                    </div>
+                    <div class="country-card" data-country="France">
+                        <img src="france.jpg" alt="France" loading="lazy">
+                        <div class="country-info">
+                            <h4>France</h4>
+                            <p>City of love and lights</p>
+                        </div>
+                    </div>
+                    <div class="country-card" data-country="Turkey">
+                        <img src="turkey.jpeg" alt="Turkey" loading="lazy">
+                        <div class="country-info">
+                            <h4>Turkey</h4>
+                            <p>Where East meets West</p>
+                        </div>
+                    </div>
+                    <div class="country-card" data-country="Russia">
+                        <img src="russia.jpeg" alt="Russia" loading="lazy">
+                        <div class="country-info">
+                            <h4>Russia</h4>
+                            <p>Vast landscapes and rich history</p>
+                        </div>
+                    </div>
+                    <div class="country-card" data-country="Italy">
+                        <img src="italy.jpg" alt="Italy" loading="lazy">
+                        <div class="country-info">
+                            <h4>Italy</h4>
+                            <p>Historic landmarks and delicious cuisine</p>
+                        </div>
+                    </div>
+                    <div class="country-card" data-country="England">
+                        <img src="england.jpg" alt="England" loading="lazy">
+                        <div class="country-info">
+                            <h4>England</h4>
+                            <p>Royal heritage and modern culture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination details sections -->
+        <div class="destination-details" id="egyptDetails">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back to destinations</button>
+            <img src="attraction in egypt.jpg" alt="Great Pyramids of Giza" class="featured-image">
+            <h1 class="destination-title">Egypt</h1>
+            <p class="destination-description">
+                Egypt, a country that bridges northeast Africa and the Middle East, is a land where ancient history and natural beauty come together in a magical way. Dating back to the time of the pharaohs, Egypt is home to some of the world's most iconic monuments. Along the fertile Nile River Valley, you'll find the awe-inspiring Pyramids of Giza and the Great Sphinx, as well as Luxor's stunning Karnak Temple and the Valley of the Kings, where ancient tombs whisper stories of a powerful civilization.
+
+                The bustling capital, Cairo, offers a mix of history and culture—from the magnificent Muhammad Ali Mosque to the Egyptian Museum, which holds a priceless collection of ancient treasures. Nile cruises offer a peaceful way to discover wonders like the temples of Abu Simbel and Philae in Aswan. For those who love the sea, Egypt's Red Sea coast is a paradise for divers and beach lovers, with vibrant coral reefs and historic shipwrecks in resorts like Sharm El-Sheikh and Hurghada.
+
+                What truly sets Egypt apart is its rich blend of ancient and modern, its welcoming people, and the endless variety of experiences it offers—from desert adventures to cultural discoveries.
+            </p>
+            <a href="../../your guide/Jana - currency converter ,destenation vidos&images/videos and images/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="destination-details" id="franceDetails">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back to destinations</button>
+            <img src="attraction in france.jfif" alt="Eiffel Tower" class="featured-image">
+            <h1 class="destination-title">France</h1>
+            <p class="destination-description">
+                France is a country where beauty meets charm in the most effortless way. In Paris, the City of Light, the Eiffel Tower sparkles above streets filled with cafés, art, and love. People stroll along the Seine River, sip espresso in little bistros, and admire world-famous masterpieces in the Louvre.
+
+                But France is more than just Paris. In the south, lavender fields bloom under the sun in Provence, while the French Riviera glows with glamour and blue Mediterranean waters. In the countryside, vineyards stretch for miles, offering some of the finest wines in the world. The snowy peaks of the French Alps welcome skiers and dreamers alike.
+
+                French culture is all about enjoying life — whether it's through food, fashion, or art. A fresh croissant in the morning, a walk through a medieval village, or a glass of wine at sunset — everything is done with a touch of elegance.
+
+                France is not just a place to visit, it's a feeling — a beautiful mix of history, style, passion, and timeless romance.
+            </p>
+            <a href="../../your guide/Jana - currency converter ,destenation vidos&images/videos and images/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="destination-details" id="turkeyDetails">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back to destinations</button>
+            <img src="atrraction in turkey.jpg" alt="Hagia Sophia" class="featured-image">
+            <h1 class="destination-title">Turkey</h1>
+            <p class="destination-description">
+                Turkey is a fascinating country that bridges eastern Europe and western Asia, enriched by the legacies of ancient Greek, Persian, Roman, Byzantine, and Ottoman civilizations. Its deep history and diverse culture make it a truly unique destination. At the heart of it all is Istanbul—a vibrant, cosmopolitan city located on the Bosphorus Strait. Here, you'll find world-famous landmarks like the magnificent Hagia Sophia with its grand dome and ancient mosaics, the stunning Blue Mosque from the 17th century, and the historic Topkapı Palace, once the residence of powerful sultans.
+
+                While Istanbul draws much attention, Turkey's modern capital, Ankara, showcases the country's contemporary spirit and political center. Beyond the cities, Turkey offers breathtaking natural beauty—from the white travertine terraces of Pamukkale to the magical landscapes of Cappadocia, and the stunning beaches along the Aegean and Mediterranean coasts.
+
+                What sets Turkey apart is its unique blend of history, culture, and hospitality. Whether you're wandering through ancient ruins, enjoying traditional Turkish cuisine, or relaxing by the sea, Turkey promises an unforgettable journey full of warmth, wonder, and discovery.
+            </p>
+            <a href="../../your guide/Jana - currency converter ,destenation vidos&images/videos and images/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="destination-details" id="russiaDetails">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back to destinations</button>
+            <img src="attraction in Russia.jpg" alt="Saint Basil's Cathedral" class="featured-image">
+            <h1 class="destination-title">Russia</h1>
+            <p class="destination-description">
+                Russia, the largest country in the world, is a land of stunning contrasts and breathtaking beauty. Spanning from Europe to Asia, it offers a rich mix of cultures, landscapes, and histories. From the colorful onion domes of Saint Basil's Cathedral in Moscow to the elegant palaces of Saint Petersburg, Russia is filled with architectural wonders and historical treasures.
+
+                Nature lovers will be amazed by Russia's vast and diverse scenery—majestic mountains like the Caucasus, peaceful lakes like Baikal (the deepest lake in the world), and endless forests that stretch across Siberia. In winter, the snowy landscapes turn into a fairytale, attracting visitors to ski resorts and frozen adventures.
+
+                What makes Russia truly special is its deep cultural heritage—ballet, classical music, literature, and art all have strong roots here. Whether you're exploring the grandeur of the Kremlin, taking a scenic ride on the Trans-Siberian Railway, or enjoying traditional Russian dishes like borscht and pelmeni, Russia promises a journey full of wonder, depth, and unforgettable moments.
+            </p>
+            <a href="../../your guide/Jana - currency converter ,destenation vidos&images/videos and images/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="destination-details" id="italyDetails">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back to destinations</button>
+            <img src="attraction for italy.jpg" alt="Colosseum" class="featured-image">
+            <h1 class="destination-title">Italy</h1>
+            <p class="destination-description">
+                Italy is a country where every corner feels like a step back in time. Walking through the streets of Rome, you can almost hear the echoes of gladiators in the Colosseum. In Florence, the birthplace of the Renaissance, art breathes life into stone, canvas, and every hidden alleyway. Venice, with its winding canals and singing gondoliers, feels like a dream floating on water.
+
+                Beyond the cities, Italy's landscapes are just as enchanting — from the golden hills of Tuscany to the sparkling blue waters of the Amalfi Coast. In the north, the majestic Dolomites rise high, perfect for adventurers and nature lovers. And by the lakes of Como and Garda, quiet beauty waits in peaceful villages.
+
+                The soul of Italy lives in its people, who love deeply, talk passionately, and never rush through a good meal. Food isn't just food — it's tradition, pride, and family. A slice of pizza in Naples, a bowl of fresh pasta in Bologna, or a scoop of creamy gelato on a warm afternoon can feel like magic.
+
+                Italy is not just a destination. It's an experience — rich, warm, full of art, flavor, and stories waiting to be discovered.
+            </p>
+            <a href="../../your guide/Jana - currency converter ,destenation vidos&images/videos and images/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="destination-details" id="englandDetails">
+            <button class="back-btn" onclick="goBack()"><i class="fas fa-arrow-left"></i> Back to destinations</button>
+            <img src="attraction in england.jpg" alt="Big Ben" class="featured-image">
+            <h1 class="destination-title">England</h1>
+            <p class="destination-description">
+                England is a land where old meets new in the most graceful way. In London, red buses roll past royal palaces and modern skyscrapers, while Big Ben quietly keeps time over the River Thames. The city is alive with history, theater, and a quiet elegance that never fades.
+
+                Beyond the capital, England's countryside tells its own story — green hills, stone cottages, and winding roads leading to charming villages. In places like the Lake District or the Cotswolds, nature and peace live side by side.
+
+                From Shakespeare's birthplace in Stratford-upon-Avon to the ancient mystery of Stonehenge, England's past is never far away. Castles, cathedrals, and cozy tearooms all whisper tales of centuries gone by.
+
+                Whether it's enjoying afternoon tea, watching the rain from a warm pub, or walking through a foggy moor, England offers a quiet, timeless kind of beauty — thoughtful, proud, and full of stories waiting to be heard.
+            </p>
+            <a href="../../your guide/Jana - currency converter ,destenation vidos&images/videos and images/index.html" class="read-more-btn">Read More</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>VoyaGO.com | Our Services: Flights, Hotels, Car Rentals</p>
+        <p>Contact Us: info@VoyaGO.com | 19990 | Helwan, Cairo, Egypt</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

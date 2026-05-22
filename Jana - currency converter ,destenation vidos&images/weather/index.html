@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <h2>Weather Dashboard</h2>
+        <button id="toggleMode" class="toggle-btn">Toggle Dark/Light Mode</button>
+    </header>
+
+    <div class="weather-container">
+        <h1>Check the Weather</h1>
+
+        <select id="citySelect">
+            <option value="cairo">Cairo</option>
+            <option value="paris">Paris</option>
+            <option value="istanbul">Istanbul</option>
+            <option value="moscow">Moscow</option>
+            <option value="rome">Rome</option>
+            <option value="london">London</option>
+        </select>
+
+        <button onclick="showWeather()">Show Weather</button>
+
+        <div class="weather-result" id="weatherResult">
+            <img id="weatherIcon" src="" alt="" class="weather-icon">
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>© 2025 Weather Info. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- befor the header and the footer  -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="mode-toggle">
+        <button id="toggleMode">Toggle Dark/Light Mode</button>
+    </div>
+
+    <div class="weather-container">
+        <h1>Check the Weather</h1>
+
+        <select id="citySelect">
+            <option value="cairo">Cairo</option>
+            <option value="paris">Paris</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="newyork">New York</option>
+            <option value="rome">Rome</option>
+        </select>
+
+        <button onclick="showWeather()">Show Weather</button>
+
+        <div class="weather-result" id="weatherResult">
+            <img id="weatherIcon" src="" alt="" class="weather-icon">
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html> -->

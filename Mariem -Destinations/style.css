@@ -1,0 +1,402 @@
+:root {
+    --primary: #003580;
+    --secondary:#003580;
+    --accent: #ffd700;
+    --text-light: #f5f5f5;
+    --text-dark: #333;
+    --bg-light: #f5f5f5;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+/* Header Styles */
+header {
+    background-color: #003580;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+header .logo {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    text-decoration: none;
+}
+
+header .logo span {
+    color: #ffd700;
+    font-size: 42px;
+    font-weight: bolder;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+header nav a.active {
+    text-decoration: underline;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+}
+
+.hero h1 {
+    color: #003580;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    padding: 20px 5%;
+    flex: 1;
+}
+
+/* Search Section */
+.search-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-btn {
+    background-color: #0f315f;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-btn:hover {
+    background-color: #005fa3;
+}
+
+/* Countries Grid - Horizontal Layout */
+.popular-destinations {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    width: 100%;
+    overflow-x: auto;
+}
+
+.popular-destinations h3 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.countries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.countries-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.countries-grid::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+.countries-grid::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 20px;
+}
+
+.country-card {
+    min-width: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.country-card:hover {
+    transform: translateY(-5px);
+}
+
+.country-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.country-info {
+    padding: 15px;
+}
+
+.country-info h4 {
+    color: #062840;
+    margin-bottom: 5px;
+}
+
+.country-info p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Destination Details */
+.destination-details {
+    display: none;
+    width: 100%;
+    padding: 30px 5%;
+}
+
+.back-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background-color: var(--secondary);
+}
+
+.featured-image {
+    width: 80%;
+    height: auto; 
+    max-height: 80vh;  
+    display: block;
+    margin: 0 auto;
+}
+
+.destination-title {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.destination-description {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.read-more-btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+    float: right;
+    margin-top: -50px;
+}
+
+.read-more-btn:hover {
+    background-color: #e6c200;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 20px 5%;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        width: 80%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        border: none;
+        gap: 10px;
+    }
+    
+    .search-bar input {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+    }
+    
+    .search-btn {
+        padding: 15px;
+        border-radius: 6px;
+        justify-content: center;
+    }
+
+    .featured-image {
+        height: 250px;
+    }
+
+    .country-card img {
+        width: 100%;
+        height: 160px; 
+        object-fit: cover;
+    }
+
+    .read-more-btn {
+        float: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .destination-title {
+        font-size: 26px;
+    }
+    
+    .logo {
+        font-size: 28px;
+    }
+    
+    .logo span {
+        font-size: 34px;
+    }
+}

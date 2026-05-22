@@ -1,0 +1,808 @@
+/* ===== General Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Header Styling ===== */
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.logo span {
+    color: #ffd700; 
+    font-size: 42px;
+    font-weight: bolder;
+}
+header .logo {
+    text-decoration: none; /* Removes underline */
+    color: white; /* Ensures color stays white */
+}
+
+/* This ensures the span inside the logo link keeps its gold color */
+header .logo span {
+    color: #ffd700;
+}
+header {
+    background-color: #003580;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 40px; /* This controls the space between logo and nav */
+}
+header nav {
+    display: flex;
+    align-items: center;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.language-switcher img {
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 2rem;
+}
+
+/* ===== Search Section ===== */
+.search-form {
+    background-color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.search-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.search-form input,
+.search-form select,
+.search-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #005fa3;
+}
+
+/* ===== Results Section ===== */
+.results {
+    max-width: 900px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    margin-bottom: 5px;
+}
+
+/* ===== Compact Currency Converter Banner ===== */
+.currency-banner {
+    background-color: #003580; /* Your header blue */
+    color: white;
+    text-align: center;
+    padding: 25px 20px; /* Reduced vertical padding */
+    margin: 20px auto; /* Tighter margin */
+    max-width: 900px; /* Matches airline cards */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.currency-banner h1 {
+    font-size: 1.5rem; /* Slightly smaller */
+    margin-bottom: 8px; /* Tighter spacing */
+    font-weight: bold;
+}
+
+.currency-banner p {
+    font-size: 1.1rem; /* Slightly smaller */
+    margin-bottom: 6px; /* Tighter spacing */
+}
+
+.currency-banner .subtext {
+    font-size: 0.95rem; /* Smaller subtext */
+    margin-bottom: 15px; /* Less space before button */
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.currency-banner .banner-btn {
+    background-color: #ffd700;
+    color: #003580;
+    border: none;
+    padding: 8px 20px; /* Smaller button */
+    font-size: 0.95rem; /* Smaller text */
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* ===== Car Rentals Slider (CSS-Only) ===== */
+.car-rentals {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.car-rentals h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #003580;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.car-slider {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.slide {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    min-width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Hide all slides by default */
+.slide {
+    display: none;
+}
+
+/* Show active slide based on radio button */
+#slide1:checked ~ .car-slider #slide-1,
+#slide2:checked ~ .car-slider #slide-2 {
+    display: flex;
+}
+
+.car-card {
+    min-width: 300px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.car-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.car-details {
+    padding: 15px;
+}
+
+.car-details h3 {
+    margin-bottom: 5px;
+    color: #003580;
+}
+
+.car-details p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.car-details .price {
+    font-weight: bold;
+    color: #0071c2;
+}
+
+/* Weekend Cars Section */
+#weekend-cars {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin: 0 auto;
+}
+
+#weekend-cars.show {
+    opacity: 1;
+    max-height: 1000px;
+    display: block !important; /* Override inline style */
+}
+
+/* Arrow Styling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #003580;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    text-align: center;
+    line-height: 40px;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
+/* Disable arrows when at bounds */
+#slide1:checked ~ .left-arrow,
+#slide2:checked ~ .right-arrow {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* ===== Building Trust Section (Vertical) ===== */
+.trust-section {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.trust-section h2 {
+    margin-bottom: 30px;
+    color: #003580;
+}
+
+.trust-item {
+    margin-bottom: 30px;
+}
+
+.trust-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.trust-details h3 {
+    color: #003580;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.trust-details p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ===== Things to Know Section ===== */
+.know-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.know-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #003580;
+    font-size: 1.8rem;
+}
+
+.know-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.know-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.know-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.know-details {
+    padding: 20px;
+}
+
+.know-details h3 {
+    color: #003580;
+    margin-bottom: 10px;
+}
+
+.know-details p {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.know-details .highlight {
+    color: #0071c2;
+    font-weight: bold;
+}
+
+
+/* ===== Flight Search Form ===== */
+.search-form {
+    background-color: white;
+    padding: 30px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.search-form h2 {
+    color: #003580;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.search-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #003580;
+}
+
+.search-form input,
+.search-form select,
+.search-form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.search-form button {
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #005fa3;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+/* ===== Passenger Selector ===== */
+.passenger-container {
+    position: relative;
+}
+
+.passenger-btn {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    color: #003580;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.passenger-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+    margin-top: 5px;
+}
+
+.passenger-dropdown.show {
+    display: block;
+}
+
+.passenger-option {
+    margin-bottom: 20px; /* Increase space between sections */
+}
+
+.passenger-option label {
+    display: block;
+    font-weight: bold;
+    color: #003580;
+    margin-bottom: 5px;
+}
+
+.passenger-description {
+    color: #666;
+    font-size: 0.8rem;
+    margin: 4px 0 8px 0; /* Better vertical spacing */
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Add space between elements */
+    margin-top: 8px; /* Add space above counter */
+}
+.counter-btn {
+    width: 28px;
+    height: 28px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Make buttons circular */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove default padding */
+}
+
+.counter-input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0; /* Remove default margins */
+    font-weight: bold;
+}
+
+/* Hide return date when one-way is selected */
+#return-date-group {
+    display: block; /* Default shown (for round trip) */
+}
+
+/* ===== Airlines Results Section ===== */
+.airlines-results {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    color: #003580;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.airline-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.airline-card:hover {
+    transform: translateY(-3px);
+}
+
+.airline-logo {
+    width: 120px;
+    height: 80px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.airline-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.flight-details {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.flight-times {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.departure, .arrival {
+    text-align: center;
+    width: 80px;
+}
+
+.time {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003580;
+    display: block;
+}
+
+.location {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.duration {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 0 15px;
+}
+
+.total-time {
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline {
+    height: 3px;
+    background-color: #0071c2;
+    position: relative;
+}
+
+.timeline::before,
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #0071c2;
+    border-radius: 50%;
+    top: -2.5px;
+}
+
+.timeline::before {
+    left: 0;
+}
+
+.timeline::after {
+    right: 0;
+}
+
+.flight-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.airline-name {
+    color: #003580;
+    font-weight: bold;
+}
+
+.flight-number {
+    color: #666;
+}
+
+.flight-pricing {
+    width: 180px;
+    text-align: right;
+    border-left: 1px solid #eee;
+    padding-left: 20px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #003580;
+    margin-bottom: 5px;
+}
+
+.fare-type {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.select-btn {
+    background-color: #0071c2;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.select-btn:hover {
+    background-color: #005fa3;
+}
+
+/* ===== Flight Add Section - Horizontal Layout ===== */
+.flight-add-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Changed from column to row */
+    justify-content: space-between; /* Distributes items evenly */
+    gap: 20px; /* Space between items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.flight-add-item {
+    flex: 1; /* Makes items grow equally */
+    min-width: 300px; /* Minimum width before wrapping */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Keep the rest of your existing styles the same */
+.flight-add-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.flight-add-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.flight-add-content h3 {
+    color: #003580;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.flight-add-content p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 600px;
+}
+/* ===== Footer Styling ===== */
+footer {
+    background-color: #003580;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #ddd;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

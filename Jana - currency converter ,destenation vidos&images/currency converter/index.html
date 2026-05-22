@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h2>Currency Converter</h2>
+  </header>
+
+  <div class="mode-toggle">
+    <button id="toggleMode">Toggle Dark/Light Mode</button>
+  </div>
+
+  <div class="converter-container">
+    <img
+      src="https://img.freepik.com/free-vector/digital-money-transfer-technology-background_1017-17454.jpg?t=st=1745869366~exp=1745872966~hmac=3ae7363d8e84fa6c2e40a9822baee6fcfa0144267801f6701ed5409c1659db68&w=740"
+      alt="Currency Image" class="currency-image">
+
+    <select id="fromCurrency">
+      <option value="EGP">Egyptian Pound (EGP)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="GBP">British Pound (GBP)</option>
+    </select>
+
+    <select id="toCurrency">
+      <option value="USD">US Dollar (USD)</option>
+      <option value="EGP">Egyptian Pound (EGP)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="GBP">British Pound (GBP)</option>
+    </select>
+
+    <input type="number" id="amount" placeholder="Enter amount">
+    <button onclick="convertCurrency()">Convert</button>
+
+    <div class="result" id="result"></div>
+    <div class="note">* Rates are approximate and for demonstration purposes only.</div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Currency Converter App</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+<!-- befor the header and the footer -->
+
+<!-- <!DOCTYPE html>
+
+<head>
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="mode-toggle">
+    <button id="toggleMode">Toggle Dark/Light Mode</button>
+  </div>
+  <div class="converter-container">
+    <img
+      src="https://img.freepik.com/free-vector/digital-money-transfer-technology-background_1017-17454.jpg?t=st=1745869366~exp=1745872966~hmac=3ae7363d8e84fa6c2e40a9822baee6fcfa0144267801f6701ed5409c1659db68&w=740"
+      alt="Currency Image" class="currency-image">
+    <h1>Currency Converter</h1>
+    <select id="fromCurrency">
+      <option value="EGP">Egyptian Pound (EGP)</option>
+      <option value="USD">US Dollar (USD)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="GBP">British Pound (GBP)</option>
+    </select>
+    <select id="toCurrency">
+      <option value="USD">US Dollar (USD)</option>
+      <option value="EGP">Egyptian Pound (EGP)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="GBP">British Pound (GBP)</option>
+    </select>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <button onclick="convertCurrency()">Convert</button>
+    <div class="result" id="result"></div>
+    <div class="note">* Rates are approximate and for demonstration purposes only.</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html> -->

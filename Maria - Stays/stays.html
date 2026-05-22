@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stays</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    /* ===== General Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== Header Styling ===== */
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .logo span {
+      color: #ffd700; 
+      font-size: 42px;
+      font-weight: bolder;
+    }
+    header .logo {
+      text-decoration: none;
+      color: white;
+    }
+
+    header .logo span {
+      color: #ffd700;
+    }
+    header {
+      background-color: #003580;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    header nav {
+      display: flex;
+      align-items: center;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content Styles */
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Booking Bar Styles */
+    .booking-bar {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .booking-option {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .booking-option label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #003580;
+    }
+
+    .booking-option input,
+    .booking-option select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: border 0.3s;
+    }
+
+    .booking-option input:focus,
+    .booking-option select:focus {
+      border-color: #0071c2;
+      outline: none;
+    }
+
+    .time-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .time-container select {
+      flex: 1;
+    }
+
+    /* Currency Banner */
+    .currency-banner {
+      background-color: #003580;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .currency-banner h1 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .currency-banner p {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .banner-btn {
+      background-color: #ffd700;
+      color: #003580;
+      border: none;
+      padding: 8px 20px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .banner-btn:hover {
+      background-color: #e6a800;
+    }
+
+    /* Reviews Button */
+    .reviews-btn-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .reviews-btn {
+      background-color: #0071c2;
+      color: white;
+      padding: 12px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .reviews-btn:hover {
+      background-color: #005fa3;
+    }
+
+    /* Dark Mode Toggle */
+    .mode-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #003580;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 99;
+      border: none;
+      font-size: 20px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+      }
+      
+      header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      header nav a {
+        margin: 0 10px;
+      }
+      
+      .booking-bar {
+        flex-direction: column;
+      }
+      
+      .booking-option {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="../../your guide/Salma - HomePage/index.html" class="logo">Voya<span>GO</span></a>
+    <nav>
+      <a href="../../your guide/Nada - Flights, Cars Rentals/flights.html">Flights</a>
+      <a href="../../your guide/Maria - Stays/stays.html">Stays</a>
+      <a href="../../your guide/Nada - Flights, Cars Rentals/CarRentals.html">Car Rentals</a>
+      <a href="../../your guide/Mariem -Destinations/destinations.html">Destinations</a>
+      <a href="../../your guide/Ahmed - Attractions , Tours/attractions.html">Attractions</a>
+      <a href="../../your guide/Ahmed - Attractions , Tours/tours.html">Tours</a>
+      <a href="../../your guide/Jana - currency converter ,destenation vidos&images/weather/index.html">Weather</a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <!-- Booking Bar -->
+    <div class="booking-bar">
+      <div class="booking-option">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" placeholder="Where are you going?">
+      </div>
+      
+      <div class="booking-option">
+        <label for="checkin">Check-in</label>
+        <input type="text" id="checkin" placeholder="Select date">
+        <div class="time-container">
+          <select id="checkin-hour">
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+            <option>11</option><option>12</option>
+          </select>
+          <select id="checkin-ampm">
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="booking-option">
+        <label for="checkout">Check-out</label>
+        <input type="text" id="checkout" placeholder="Select date">
+        <div class="time-container">
+          <select id="checkout-hour">
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+            <option>11</option><option>12</option>
+          </select>
+          <select id="checkout-ampm">
+            <option>AM</option>
+            <option>PM</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="booking-option">
+        <label for="guests">Guests</label>
+        <input type="text" id="guests" placeholder="1 adult, 0 children" readonly>
+      </div>
+    </div>
+    
+
+    
+    <!-- Currency Banner -->
+    <div class="currency-banner">
+      <h1>Currency converter</h1>
+      <p>Convert any currency in seconds no math, no hassle.</p>
+      <a href="../../your guide/Jana - currency converter ,destenation vidos&images/currency converter/index.html">    
+      <button class="banner-btn">try now!</button>
+      </a>
+    </div>
+    
+    <!-- View Reviews Button -->
+    <div class="reviews-btn-container">
+      <a href="reviews.html" class="reviews-btn">View Reviews</a>
+    </div>
+  </div>
+  
+  <!-- Dark Mode Toggle -->
+  <button class="mode-toggle" onclick="toggleMode()" id="modeToggleBtn">🌙</button>
+  
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    // Initialize date pickers
+    flatpickr("#checkin", {
+      dateFormat: "Y-m-d",
+      minDate: "today"
+    });
+    
+    flatpickr("#checkout", {
+      dateFormat: "Y-m-d",
+      minDate: "today"
+    });
+    
+    // Dark mode toggle
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+      const btn = document.getElementById('modeToggleBtn');
+      btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+    
+    // Add dark mode styles dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+      body.dark-mode {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+      }
+      
+      body.dark-mode .booking-bar,
+      body.dark-mode .currency-banner {
+        background-color: #2d2d2d;
+        color: #f0f0f0;
+      }
+      
+      body.dark-mode .booking-option input,
+      body.dark-mode .booking-option select {
+        background-color: #3d3d3d;
+        color: #f0f0f0;
+        border-color: #4d4d4d;
+      }
+      
+      body.dark-mode .booking-option label {
+        color: #ffd700;
+      }
+      
+      body.dark-mode .currency-banner {
+        background-color: #1e3a5f;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

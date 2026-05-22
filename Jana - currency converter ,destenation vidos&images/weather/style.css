@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://images.pexels.com/photos/912364/pexels-photo-912364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 00px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+.main-header {
+    background-color: #003580;
+    ;
+    color: white;
+    padding: 0px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.main-header h2 {
+    margin: auto;
+    padding-left: 20%;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.toggle-btn {
+    margin-right: 20px;
+    padding: 10px 20px;
+    background-color: #005fa3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 300px;
+}
+
+.toggle-btn:hover {
+    background-color: #003f70;
+}
+
+
+.main-footer {
+    background-color: #003580;
+    ;
+    color: white;
+    text-align: center;
+    padding: 0px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+}
+
+.weather-container {
+    background: #ffffff;
+    ;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button:not(.toggle-btn) {
+    background-color: #0077cc;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:not(.toggle-btn):hover {
+    background-color: #005fa3;
+}
+
+button:not(.toggle-btn):active {
+    transform: scale(0.95);
+}
+
+.weather-result {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.show-result {
+    opacity: 1;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+body.dark {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+}
+
+body.dark .weather-container {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+body.dark select,
+body.dark button {
+    background: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+body.dark button:not(.toggle-btn):hover {
+    background-color: #333;
+}
+
+body.dark .main-header,
+body.dark .main-footer {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark .toggle-btn {
+    background-color: #444;
+}
+
+body.dark .toggle-btn:hover {
+    background-color: #333;
+}
+
+/* befor the header and the footer */
+/* body {
+    font-family: Arial, sans-serif;
+    background: url('https://www.aipython.in/wp-content/uploads/2021/09/weather-api-python-1024x576.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.mode-toggle button {
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.weather-container {
+    background: rgb(172, 172, 172);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 85%;
+}
+
+select,
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #0077cc;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.weather-result {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.show-result {
+    opacity: 1;
+}
+
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+body.dark {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+}
+
+body.dark .weather-container {
+    background: #2c2c2c;
+    color: #fff;
+}
+
+body.dark select,
+body.dark button {
+    background: #444;
+    color: #fff;
+    border: 1px solid #666;
+}
+
+body.dark button:hover {
+    background-color: #333;
+} */

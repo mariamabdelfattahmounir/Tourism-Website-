@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        /* ===== General Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* ===== Review Section Styling ===== */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .review-section h2 {
+            color: #003580;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .reviews {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .review-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .reviewer-name {
+            font-size: 1.2rem;
+            color: #003580;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .review-text {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .review-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .review-images img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .review-images img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Review Form Styling */
+        .review-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .review-form h3 {
+            color: #003580;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #003580;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #0071c2;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .submit-btn:hover {
+            background-color: #005fa3;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .image-gallery h3 {
+            color: #003580;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Image Popup */
+        .image-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .popup-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background-color: #0071c2;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .review-section,
+        .dark-mode .review-form,
+        .dark-mode .image-gallery {
+            background-color: #2d2d2d;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .reviewer-name,
+        .dark-mode .review-form h3,
+        .dark-mode .image-gallery h3 {
+            color: #ffd700;
+        }
+
+        .dark-mode .review-text {
+            color: #ccc;
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group textarea,
+        .dark-mode .form-group select {
+            background-color: #3d3d3d;
+            color: #f0f0f0;
+            border-color: #4d4d4d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003580;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: -100px;
+            transition: bottom 0.3s ease;
+            z-index: 99;
+        }
+
+        footer.visible {
+            bottom: 0;
+        }
+
+        footer a {
+            color: #ddd;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mode Toggle */
+        .mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #003580;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Uploaded Images */
+        .uploaded-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
+    <div class="container">
+        <div class="review-section">
+            <h2>Customer Reviews</h2>
+            
+            <ul class="reviews" id="reviews-list">
+                <li class="review-item">
+                    <h3 class="reviewer-name">Marina Jorge</h3>
+                    <div class="rating">★★★★★</div>
+                    <p class="review-text">Great place, won't be the last time for sure.</p>
+                    <div class="review-images">
+                        <img src="https://cdn.al-ain.com/lg/images/2021/1/04/143-211230-pictures-6-new-international-hotels-2021-4.jpeg">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbVTt6o504iQ6PzR24O1Fv2Nkp_25jiJd1Qg&s">
+                        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/583392344.jpg?k=e747285995de7077355d21327689836df61312cbbe92d5a6513d1877a78b1551&o=&hp=1">
+                    </div>
+                </li>
+                
+                <li class="review-item">
+                    <h3 class="reviewer-name">John Doe</h3>
+                    <div class="rating">★★★★☆</div>
+                    <p class="review-text">Great experience, would definitely stay again!</p>
+                    <div class="review-images">
+                        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/507890618.jpg?k=7b2e6bdace4f792884d7b64c35b0dbcdc8681faf0793839b9bbc4d90c4d953b4&o=&hp=1">
+                        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/72628806.jpg?k=adc5d6e6649f52671c0378bcbe873e166f93df21ac00f84a5c72f8d7ed111db4&o=&hp=1">
+                    </div>
+                </li>
+                
+                <li class="review-item">
+                    <h3 class="reviewer-name">Jane Smith</h3>
+                    <div class="rating">★★★★★</div>
+                    <p class="review-text">Amazing service and the rooms were perfect. Highly recommend!</p>
+                    <div class="review-images">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDd2NmsgthElkBkAnbBTzdDf2ZdQ0GJQpXOEp1Gvj1ro5COlujMXTn024e0bPVnZj9QdQ&usqp=CAU">
+                        <img src="https://jungle-aqua-park-hotel-hurghada.albooked.com/data/Photos/OriginalPhoto/15844/1584444/1584444893/Pickalbatros-Jungle-Aqua-Park-Neverland-Hurghada-Adults-Only-Hotel-Exterior.JPEG">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="review-form">
+            <h3>Submit Your Review</h3>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="reviewer-name">Your Name</label>
+                    <input type="text" id="reviewer-name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" placeholder="Share your experience..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-rating">Rating</label>
+                    <select id="review-rating" required>
+                        <option value="">Select rating</option>
+                        <option value="5">★★★★★ (Excellent)</option>
+                        <option value="4">★★★★☆ (Very Good)</option>
+                        <option value="3">★★★☆☆ (Good)</option>
+                        <option value="2">★★☆☆☆ (Fair)</option>
+                        <option value="1">★☆☆☆☆ (Poor)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewer-image">Upload Photo (Optional)</label>
+                    <input type="file" id="reviewer-image" accept="image/*">
+                    <div id="image-preview" style="display: none; margin-top: 10px;"></div>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+        </div>
+
+        <div class="image-gallery">
+            <h3>Hotel Gallery</h3>
+            <div class="image-grid">
+                <img src="https://citymagazine.si/ar/%D8%A3%D9%83%D8%AB%D8%B1-%D8%A7%D9%84%D9%81%D9%86%D8%A7%D8%AF%D9%82-%D8%B1%D9%88%D9%85%D8%A7%D9%86%D8%B3%D9%8A%D8%A9-%D9%81%D9%8A-%D9%85%D8%AF%D8%B1%D9%8A%D8%AF-%D9%84%D9%82%D8%B6%D8%A7%D8%A1-%D8%B9-2/rosewood-villa-magna-3/">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzV4crQnIENowquElSrGVpvMIF3X4UH5YDYA&s">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpDMUaY-uolA91CPYckma5Bjlj5CHM7T5T7RgyGF6Q8AM8xVKSiePQo0bOjkzvNjiNL-4&usqp=CAU">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/7e/b6/37/hotel-sultania.jpg?w=300&h=-1&s=1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXoa5peQheeH-V97yVwmapnsLtboBqJEzoQ&s">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/a4/5a/0d/sunset-pool-area.jpg?w=700&h=400&s=1">
+                <img src="https://island-view-resort-sharm-el-sheikh.albooked.com/data/Photos/1080x700/540/54067/54067390/Island-View-Resort-Sharm-el-Sheikh-Exterior.JPEG">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/2c/6a/61/pyramids-view-inn.jpg?w=500&h=-1&s=1">
+            </div>
+        </div>
+    </div>
+
+    <div id="image-popup" class="image-popup" onclick="closePopup()">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">×</button>
+            <img id="popup-image" src="" alt="Popup Image">
+        </div>
+    </div>
+
+    <footer id="page-footer">
+        <p>VoyaGo.com | Our Services: Flights, Hotels, Car Rentals</p>
+        <p>Contact Us: info@VoyaGo.com | 19990 | Helwan, Cairo, Egypt</p>
+    </footer>
+
+    <script>
+        // Image popup functionality
+        const images = document.querySelectorAll('.review-images img, .image-grid img');
+        const popup = document.getElementById('image-popup');
+        const popupImage = document.getElementById('popup-image');
+        
+        images.forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation();
+                popupImage.src = this.src;
+                popup.style.display = 'flex';
+            });
+        });
+        
+        function closePopup() {
+            popup.style.display = 'none';
+        }
+        
+        // Dark mode toggle
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            const btn = document.querySelector('.mode-toggle');
+            btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+        
+        // Check for saved mode preference
+        if (localStorage.getItem('mode') === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.mode-toggle').textContent = '☀️';
+        }
+        
+        // Image preview for upload
+        document.getElementById('reviewer-image').addEventListener('change', function(e) {
+            const preview = document.getElementById('image-preview');
+            preview.innerHTML = '';
+            preview.style.display = 'none';
+            
+            if (this.files && this.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'uploaded-image';
+                    preview.appendChild(img);
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+        
+        // Form submission
+        document.getElementById('review-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('reviewer-name').value;
+            const text = document.getElementById('review-text').value;
+            const rating = document.getElementById('review-rating').value;
+            const imageInput = document.getElementById('reviewer-image');
+            
+            // Create new review element
+            const newReview = document.createElement('li');
+            newReview.className = 'review-item';
+            
+            let stars = '';
+            for (let i = 0; i < 5; i++) {
+                stars += i < rating ? '★' : '☆';
+            }
+            
+            let imageHTML = '';
+            if (imageInput.files[0]) {
+                const imageURL = URL.createObjectURL(imageInput.files[0]);
+                imageHTML = `<div class="review-images"><img src="${imageURL}"></div>`;
+            }
+            
+            newReview.innerHTML = `
+                <h3 class="reviewer-name">${name}</h3>
+                <div class="rating">${stars}</div>
+                <p class="review-text">${text}</p>
+                ${imageHTML}
+            `;
+            
+            document.getElementById('reviews-list').prepend(newReview);
+            this.reset();
+            document.getElementById('image-preview').style.display = 'none';
+        });
+        
+        // Footer visibility on scroll
+        const footer = document.getElementById('page-footer');
+        let lastScrollPosition = 0;
+        
+        window.addEventListener('scroll', function() {
+            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Show footer only when scrolling near bottom
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                footer.classList.add('visible');
+            } else {
+                footer.classList.remove('visible');
+            }
+            
+            lastScrollPosition = currentScrollPosition <= 0 ? 0 : currentScrollPosition;
+        });
+    </script>
+</body>
+</html>

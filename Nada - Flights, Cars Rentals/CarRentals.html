@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car rental</title>
+  <style>
+    /* DEBUG STYLES - MAKE SURE SECTION IS VISIBLE */
+    #weekend-cars {
+      display: none;
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    
+    /* Make it obvious when visible */
+    #weekend-cars.show {
+      display: block !important;
+      animation: flash 1s;
+    }
+    
+
+    
+    /* Original styles */
+    .car-rentals {
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+    
+    .car-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Add any other necessary styles from your stylee.css */
+  </style>
+  <link rel="stylesheet" href="stylee.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="../../your guide/Salma - HomePage/index.html" class="logo">Voya<span>GO</span></a>
+    <nav>
+      <a href="../../your guide/Nada - Flights, Cars Rentals/flights.html">Flights</a>
+      <a href="../../your guide/Maria - Stays/stays.html">Stays</a>
+      <a href="../../your guide/Nada - Flights, Cars Rentals/CarRentals.html">Car Rentals</a>
+      <a href="../../your guide/Mariem -Destinations/destinations.html">Destinations</a>
+      <a href="../../your guide/Ahmed - Attractions , Tours/attractions.html">Attractions</a>
+      <a href="../../your guide/Ahmed - Attractions , Tours/tours.html">Tours</a>
+      <a href="../../your guide/Jana - currency converter ,destenation vidos&images/weather/index.html">Weather</a>
+    </nav>
+  </header>
+
+
+  <!-- Transportation Form -->
+  <section class="search-form">
+    <h1>Car hire for any kind of trip</h1>
+
+    <!-- Pickup and Dropoff -->
+    <div class="row">
+      <div>
+        <label for="pickup">Pickup Location:</label>
+        <input type="text" id="pickup" placeholder="Enter pickup location" />
+      </div>
+      <div>
+        <label for="dropoff">Drop-off Location:</label>
+        <input type="text" id="dropoff" placeholder="Enter drop-off location" />
+      </div>
+    </div>
+
+    <!-- Date and Time -->
+    <div class="row">
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" id="date" />
+      </div>
+      <div>
+        <label for="time">Time:</label>
+        <input type="time" id="time" />
+      </div>
+    </div>
+
+    <button id="searchBtn" type="button">Search</button>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results" id="results">
+    <!-- JS will add cards here -->
+  </section>
+
+
+  <!-- Currency Converter Banner -->
+  <div class="currency-banner">
+      <h1>Currency converter</h1>
+      <p>Convert any currency in seconds no math ,no hassle.</p>
+      <a href="../../your guide/Jana - currency converter ,destenation vidos&images/currency converter/index.html">    
+      <button class="banner-btn">try now!</button>
+      </a>  </div>
+  <!-- car cards slider section -->
+  <section class="car-rentals" id="weekend-cars" style="display: none;">
+    <h2>Select your perfect car!</h2>
+    <div class="slider-container">
+      <!-- Radio buttons to control slides -->
+      <input type="radio" name="slider" id="slide1" checked hidden>
+      <input type="radio" name="slider" id="slide2" hidden>
+      
+      <!-- Slides -->
+      <div class="car-slider">
+        <!-- Slide 1 (Cards 1-3) -->
+        <div class="slide" id="slide-1">
+          <div class="car-card">
+            <img src="images/car1.jpg" alt="Volkswagen Golf">
+            <div class="car-details">
+              <h3>Volkswagen Golf</h3>
+              <p>or similar Medium car</p>
+              <p class="location">Borg el Arab International Airport</p>
+              <p class="price">Price for 2 days from EGP 4,433.20</p>
+              <p class="date">Wed 21 May - Fri 23 May</p>
+            </div>
+          </div>
+          <div class="car-card">
+            <img src="images/car2.jpeg" alt="Mercedes-Benz C-Class">
+            <div class="car-details">
+              <h3>Mercedes-Benz C-Class</h3>
+              <p>or similar Large car</p>
+              <p class="location">Borg el Arab International Airport</p>
+              <p class="price">Price for 2 days from EGP 5,475.10</p>
+              <p class="date">Wed 21 May - Fri 23 May</p>
+            </div>
+          </div>
+          <div class="car-card">
+            <img src="images/car3.jpeg" alt="BMW X5 4x4">
+            <div class="car-details">
+              <h3>BMW X5 4x4</h3>
+              <p>or similar SUV</p>
+              <p class="location">Borg el Arab International Airport</p>
+              <p class="price">Price for 2 days from EGP 6,152.98</p>
+              <p class="date">Wed 21 May - Fri 23 May</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 (Cards 2-4) -->
+        <div class="slide" id="slide-2">
+          <div class="car-card">
+            <img src="images/car2.jpeg" alt="Mercedes-Benz C-Class">
+            <div class="car-details">
+              <h3>Mercedes-Benz C-Class</h3>
+              <p>or similar Large car</p>
+              <p class="location">Borg el Arab International Airport</p>
+              <p class="price">Price for 2 days from EGP 5,475.10</p>
+              <p class="date">Wed 21 May - Fri 23 May</p>
+            </div>
+          </div>
+          <div class="car-card">
+            <img src="images/car3.jpeg" alt="BMW X5 4x4">
+            <div class="car-details">
+              <h3>BMW X5 4x4</h3>
+              <p>or similar SUV</p>
+              <p class="location">Borg el Arab International Airport</p>
+              <p class="price">Price for 2 days from EGP 6,152.98</p>
+              <p class="date">Wed 21 May - Fri 23 May</p>
+            </div>
+          </div>
+          <div class="car-card">
+            <img src="images/car4.jpg" alt="Audi A4">
+            <div class="car-details">
+              <h3>Audi A4</h3>
+              <p>or similar Large car</p>
+              <p class="location">Borg el Arab International Airport</p>
+              <p class="price">Price for 2 days from EGP 5,200.00</p>
+              <p class="date">Wed 21 May - Fri 23 May</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arrow Labels (Act as buttons) -->
+      <label for="slide1" class="arrow left-arrow">←</label>
+      <label for="slide2" class="arrow right-arrow">→</label>
+    </div>
+  </section>
+
+  <!-- Building Trust Section -->
+  <section class="trust-section">
+    <h2>We're here for you</h2>
+    <!-- Trust Item 1 -->
+    <div class="trust-item">
+      <img src="images/trust1.jpg" alt="Customer support">
+      <div class="trust-details">
+        <h3>Customer support in over 30 languages</h3>
+      </div>
+    </div>
+    <!-- Trust Item 2 -->
+    <div class="trust-item">
+      <img src="images/trust2.jpg" alt="Free cancellation">
+      <div class="trust-details">
+        <h3>Free cancellation</h3>
+        <p>Up to 48 hours before pick-up, on most bookings</p>
+      </div>
+    </div>
+    <!-- Trust Item 3 -->
+    <div class="trust-item">
+      <img src="images/trust3.jpg" alt="Verified reviews">
+      <div class="trust-details">
+        <h3>5 million+ reviews</h3>
+        <p>By real, verified customers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Things to Know Section -->
+
+  <section class="know-section">
+    <h2>Car rentals: Things to know</h2>
+    <div class="know-grid">
+      <!-- Know Item 1 -->
+      <div class="know-item">
+        <img src="images/toknow1.jpg" alt="RC - Budget">
+        <div class="know-details">
+          <h3>RC - Budget</h3>
+          <p>The most booked company over the past month</p>
+          <p class="highlight">EGP 1,847 per day</p>
+          <p>Avg. daily price for Medium car</p>
+          <p class="highlight">Typical rental destinations</p>
+          <p>Alexandria</p>
+        </div>
+      </div>
+      <!-- Know Item 2 -->
+      <div class="know-item">
+        <img src="images/toknow2.jpg" alt="Booking tips">
+        <div class="know-details">
+          <h3>Best time to book to pay less</h3>
+          <p>On the pick-up day</p>
+          <p class="highlight">Medium car</p>
+          <p>The most popular to book</p>
+          <p class="highlight">Typical rental term</p>
+          <p>2 days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>VoyaGo.com | Our Services: Flights, Hotels, Car Rentals</p>
+    <p>Contact Us: info@VoyaGo.com | 19990 | Helwan, Cairo, Egypt</p>
+  </footer>
+
+  <!-- INLINE SCRIPT - THIS WILL WORK -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Page loaded - script running');
+      
+      const searchBtn = document.getElementById('searchBtn');
+      const weekendCars = document.getElementById('weekend-cars');
+      
+      if (!searchBtn || !weekendCars) {
+        console.error('Critical elements missing!');
+        return;
+      }
+      
+      searchBtn.addEventListener('click', function() {
+        console.log('Search button clicked!');
+        
+        // Simple show/hide toggle
+        if (weekendCars.style.display === 'none') {
+          weekendCars.style.display = 'block';
+          weekendCars.classList.add('show');
+          console.log('Showing weekend cars section');
+        } else {
+          weekendCars.style.display = 'none';
+          weekendCars.classList.remove('show');
+          console.log('Hiding weekend cars section');
+        }
+      });
+    });
+        // Add click handlers for all car images
+    document.querySelectorAll('.car-card img').forEach(img => {
+    img.addEventListener('click', function() {
+        window.location.href = 'thankyou.html';
+    });
+    });
+  </script>
+</body>
+</html>
